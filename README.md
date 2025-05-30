@@ -101,10 +101,17 @@ If you would like to submit a pull request, please read our
 build and install _dash-bootstrap-components_ locally, how to check your code
 will pass our linting checks, and how to submit the pull request itself.
 
+## Acknowledgements
+
+The _dash-bootstrap-components_ maintainers would like to thank [Faculty][faculty] for their early support in helping this project get off the ground.Since 2025, it has been maintained by the Dash community.
+
 ## Copyright and license
 
-Code and documentation is copyright [Faculty Science Ltd.][faculty]
-2018-2025, and released under the [Apache 2.0 license](https://github.com/dbc-team/dash-bootstrap-components/blob/main/LICENSE)
+Copyright © 2018–2025 [Faculty Science Ltd.][faculty]
+Copyright © 2025 the _dash-bootstrap-components_ maintainers
+
+Released under the [Apache 2.0 license](https://github.com/dbc-team/dash-bootstrap-components/blob/main/LICENSE).
+
 
 [dash-homepage]: https://dash.plotly.com/
 [dash-docs-external]: https://dash.plotly.com/external-resources
