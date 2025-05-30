@@ -103,7 +103,7 @@ will pass our linting checks, and how to submit the pull request itself.
 
 ## Acknowledgements
 
-The _dash-bootstrap-components_ maintainers would like to thank [Faculty][faculty] for their early support in helping this project get off the ground.Since 2025, it has been maintained by the Dash community.
+The _dash-bootstrap-components_ maintainers would like to thank [Faculty][faculty] for their early support in helping this project get off the ground. Since 2025, it has been maintained by the Dash community.
 
 ## Copyright and license
 
