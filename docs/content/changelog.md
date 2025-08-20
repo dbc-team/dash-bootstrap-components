@@ -6,16 +6,26 @@ title: Changelog
 
 This page documents notable changes in dash-bootstrap-components releases.
 
+## 2.0.4 - 2025/08/20
+
+Version 2.0.4 of _dash-bootstrap-components_! This is a patch release fixing a bug in the `Spinner` component.
+
+### Fixed
+
+- Make sure loading spinner only shows when children are loading. ([PR 1140](https://github.com/facultyai/dash-bootstrap-components/pull/1140))
+
 ## 2.0.3 - 2025/05/22
 
 Version 2.0.3 of dash-bootstrap-components! This version fixes a bug in the Tabs component and updates the version requirement for the _dash_ package. We have also updated CDN links for Bootstrap stylesheets. Please continue to report problems on our [issue tracker](https://github.com/dbc-team/dash-bootstrap-components/issues).
 
 ### Changed
+
 - _dash-bootstrap-components_ now requires dash>=3.0.4 ([PR 1129](https://github.com/dbc-team/dash-bootstrap-components/pull/1129))
 - Update the version of Bootstrap CDN links to 5.3.6 ([PR 1130](https://github.com/dbc-team/dash-bootstrap-components/pull/1130))
 - Update docs domain to dash-bootstrap-components.com ([PR 1133](https://github.com/dbc-team/dash-bootstrap-components/pull/1133))
 
 ### Fixed
+
 - Fixed bug that caused an error message when changing the number of children in `Tabs` component ([PR 1128](https://github.com/dbc-team/dash-bootstrap-components/pull/1128))
 
 ## 2.0.2 - 2025/04/21
@@ -23,10 +33,12 @@ Version 2.0.3 of dash-bootstrap-components! This version fixes a bug in the Tabs
 Version 2.0.2 of dash-bootstrap-components! This version fixes a bug in the Tabs component and updates the version requirement for the _dash_ package. A number of docstrings have also been cleaned up and made consistent. Please continue to report problems on our [issue tracker](https://github.com/dbc-team/dash-bootstrap-components/issues).
 
 ### Changed
+
 - _dash-bootstrap-components_ now requires dash>=3.0.3 ([PR 1120](https://github.com/dbc-team/dash-bootstrap-components/pull/1120))
 - Updated docstrings correcting typos and making formatting consistent ([PR 1122](https://github.com/dbc-team/dash-bootstrap-components/pull/1122))
 
 ### Fixed
+
 - Updating a `Tab` in a callback now triggers a re-render of the parent `Tabs` component ([PR 1120](https://github.com/dbc-team/dash-bootstrap-components/pull/1120))
 
 ## 2.0.1 - 2025/04/11
@@ -34,10 +46,12 @@ Version 2.0.2 of dash-bootstrap-components! This version fixes a bug in the Tabs
 Version 2.0.1 of dash-bootstrap-components! This version fixes bugs and updates CDN links. Please continue to report problems on our [issue tracker](https://github.com/dbc-team/dash-bootstrap-components/issues).
 
 ### Changed
+
 - Updated CDN links for Bootstrap CSS, Bootswatch CSS, Bootstrap Icons and FontAwesome Icons ([PR 1109](https://github.com/dbc-team/dash-bootstrap-components/pull/1109))
 - Dropped upper bound on supported Python versions ([PR 1107](https://github.com/dbc-team/dash-bootstrap-components/pull/1107))
 
 ### Fixed
+
 - Fixed regression preventing `dbc.Button` from being used in conjunction with `dcc.ConfirmDialogProvider` ([PR 1111](https://github.com/dbc-team/dash-bootstrap-components/pull/1111))
 
 ## 2.0.0 - 2025/03/17
@@ -45,20 +59,22 @@ Version 2.0.1 of dash-bootstrap-components! This version fixes bugs and updates 
 Version 2.0.0 of dash-bootstrap-components! This version makes various internal updates for compatibility with Dash 3.0.0 which is now required to use dash-bootstrap-components. Please continue to report problems on our [issue tracker](https://github.com/dbc-team/dash-bootstrap-components/issues).
 
 ### Added
+
 - Added Label.xxl prop. The logic for this was in place but the prop was not exposed to the Component due to a missing prop-types declaration ([PR 1084](https://github.com/dbc-team/dash-bootstrap-components/pull/1084))
 - `Spinner` and `Placeholder` now accept the `target_components` prop which functions like `dcc.Loading` ([PR 1080](https://github.com/dbc-team/dash-bootstrap-components/pull/1080))
 - Added `display` prop for `Spinner` and `Placeholder` to force the component to show ([PR 1080](https://github.com/dbc-team/dash-bootstrap-components/pull/1080))
 - Added `disabled` prop to `CardLink` ([PR 1084](https://github.com/dbc-team/dash-bootstrap-components/pull/1084))
 
 ### Changed
+
 - dash-bootstrap-components now requires `dash>=3.0.0`.
 - Made `Modal` styling props consistent. `modal_class_name` and `modalClassName` are renamed to `class_name` and `className` respectively which target the same element as `style`. `class_name` and `className` previously set styles on the modal dialog, which should now be done with `dialog_class_name` and `dialogClassName` respectively. This is consistent with behaviour of `style` and `dialog_style` ([PR 1090](https://github.com/dbc-team/dash-bootstrap-components/pull/1090))
 
 ### Removed
+
 - Removed the following props which had no effect: Carousel.ride, DropdownMenu.addon_type, Navbar.light, NavbarSimple.light, Popover.innerClassName, Popover.inner_class_name. ([PR 1088](https://github.com/dbc-team/dash-bootstrap-components/pull/1088)) ([PR 1090](https://github.com/dbc-team/dash-bootstrap-components/pull/1090))
 - Removed the following deprecated props: DropdownMenu.right, Table.dark ([PR 1084](https://github.com/dbc-team/dash-bootstrap-components/pull/1084))
 - All `_timestamp` props. Use callback context instead. ([PR 1082](https://github.com/dbc-team/dash-bootstrap-components/pull/1082))
-
 
 ## 1.7.1 - 2025/01/16
 
@@ -69,6 +85,7 @@ Version 1.7.1 of dash-bootstrap-components. This version fixes a build issue wit
 Version 1.7.0 of dash-bootstrap-components. This version exposes some new props for `Modal`, and `Textarea` to allow users to customise the behaviour of those components, and extends the functionality of the `debounce` prop in `Input` and `Textarea` components. Please continue to report problems on our [issue tracker](https://github.com/dbc-team/dash-bootstrap-components/issues).
 
 ### Added
+
 - Added `content_style` / `contentStyle` and `dialog_style` / `dialogStyle` props to `Modal` to complement the existing `contentClassName` and `dialogClassName` props ([PR 1029](https://github.com/dbc-team/dash-bootstrap-components/pull/1029))
 - Added `submit_on_enter` prop to `Textarea` to allow users to disable default behaviour of incrementing `n_submit` when the Enter key is pressed ([PR 1036](https://github.com/dbc-team/dash-bootstrap-components/pull/1036))
 - Allow numeric debounce in `Input` and `Textarea` components ([PR 1056](https://github.com/dbc-team/dash-bootstrap-components/pull/1056))
@@ -78,16 +95,19 @@ Version 1.7.0 of dash-bootstrap-components. This version exposes some new props 
 Version 1.6.0 of dash-bootstrap-components. This version makes some improvements to `Accordion`, `Modal` and `Progress` as well as updating CDN links. Please continue to report problems on our [issue tracker](https://github.com/dbc-team/dash-bootstrap-components/issues).
 
 ### Added
+
 - The `title` property of `AccordionItem` can now be an arbitrary Dash component ([PR 988](https://github.com/dbc-team/dash-bootstrap-components/pull/988))
 - You can now set `enforceFocus=False` on a `Modal` to allow components in the background to receive focus while the `Modal` is open ([PR 1001](https://github.com/dbc-team/dash-bootstrap-components/pull/1001))
 - The documentation now has a dark mode ([PR 984](https://github.com/dbc-team/dash-bootstrap-components/pull/984))
 
 ### Fixed
+
 - The `min` and `max` properties of a `Progress` bar are propagated to its children ([PR 986](https://github.com/dbc-team/dash-bootstrap-components/pull/986))
 - Fixed console errors originating from `Tooltip` component ([PR 1008](https://github.com/dbc-team/dash-bootstrap-components/pull/1008))
 - Fix error caused by `Tooltip` closing as component unmounts ([PR 1008](https://github.com/dbc-team/dash-bootstrap-components/pull/1008))
 
 ### Changed
+
 - Drop support for Python 3.7 as it is EOL ([PR 995](https://github.com/dbc-team/dash-bootstrap-components/pull/995))
 - The `themes` module now links to Bootstrap 5.3.3 ([PR 1013](https://github.com/dbc-team/dash-bootstrap-components/pull/1013))
 
@@ -96,10 +116,12 @@ Version 1.6.0 of dash-bootstrap-components. This version makes some improvements
 Version 1.5.0 of dash-bootstrap-components. This version makes some improvements to `Carousel` and `Textarea` as well as updating CDN links. Please continue to report problems on our [issue tracker](https://github.com/dbc-team/dash-bootstrap-components/issues).
 
 ### Changed
+
 - Textarea will no longer increment `n_submit` if the user types "shift + enter" to create a new-line ([PR 968](https://github.com/dbc-team/dash-bootstrap-components/pull/968))
 - CDN links have been updated to use Bootstrap version 5.3.1 ([PR 977](https://github.com/dbc-team/dash-bootstrap-components/pull/977))
 
 ### Added
+
 - You can now pass a `href` attribute to a Carousel item to render that item as a link. Thanks @mapix for the contribution! ([PR 971](https://github.com/dbc-team/dash-bootstrap-components/pull/971), [PR 973](https://github.com/dbc-team/dash-bootstrap-components/pull/973), [PR 975](https://github.com/dbc-team/dash-bootstrap-components/pull/975))
 
 ## 1.4.2 - 2023/07/15
@@ -111,6 +133,7 @@ Version 1.4.2 of dash-bootstrap-components. This version contains updates and bu
 - Fixed navigation bug when using auto-dismissing `Alert` ([PR 962](https://github.com/dbc-team/dash-bootstrap-components/pull/962))
 
 ### Changed
+
 - Updated CDN links for Bootstrap and Bootswatch stylesheets ([PR 963](https://github.com/dbc-team/dash-bootstrap-components/pull/963))
 
 ## 1.4.1 - 2023/03/17
@@ -120,7 +143,7 @@ Version 1.4.1 of dash-bootstrap-components. This version contains bug fixes but 
 ### Fixed
 
 - Fixed issue with `active_label_style` in `dbc.Tab` not overwriting `label_style` ([PR 946](https://github.com/dbc-team/dash-bootstrap-components/pull/946))
-- Updated CDN links for icons in R and Julia packages  ([PR 950](https://github.com/dbc-team/dash-bootstrap-components/pull/950))
+- Updated CDN links for icons in R and Julia packages ([PR 950](https://github.com/dbc-team/dash-bootstrap-components/pull/950))
 
 ## 1.4.0 - 2023/02/27
 
