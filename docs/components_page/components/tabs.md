@@ -35,6 +35,30 @@ To apply certain styles only to the currently active tab, you can use the `activ
 
 {{example:components/tabs/active_style.py:tabs}}
 
+## Labels with icons
+
+Unfortunately it is currently only possible to use strings for tab labels, and not arbitrary Dash components. It is possible however to use some custom CSS to add icons to tabs as this example shows. If you try this yourself, make sure you [link the FontAwesome CSS](https://www.dash-bootstrap-components.com/docs/icons/).
+
+```css
+#labelled-tabs .nav-item .nav-link::after {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 200;
+  font-style: normal;
+  margin: 0px 0px 0px 10px;
+  text-decoration: none;
+}
+
+#labelled-tabs .nav-item:nth-child(1) .nav-link::after {
+  content: '\f005';
+}
+
+#labelled-tabs .nav-item:nth-child(2) .nav-link::after {
+  content: '\f2bd';
+}
+```
+
+{{example:components/tabs/labels_with_icons.py:tabs}}
+
 {{apidoc:src/components/tabs/Tabs.js}}
 
 {{apidoc:src/components/tabs/Tab.js}}
