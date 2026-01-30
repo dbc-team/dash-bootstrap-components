@@ -26,6 +26,14 @@ classifiers = [
 ]
 dynamic = ["version"]
 
+[dependency-groups]
+dev = [
+    "dash[dev,testing]>=2.0.0",
+    "pytest>=8.3.4",
+    "ruff>=0.8.5",
+    "semver>=3.0.2",
+]
+
 [project.urls]
 Homepage = "https://www.dash-bootstrap-components.com/"
 Source = "https://github.com/dbc-team/dash-bootstrap-components/"
@@ -109,12 +117,4 @@ known-third-party = [
     "termcolor",
     "werkzeug",
     "wordcloud",
-]
-
-[tool.uv]
-dev-dependencies = [
-    "dash[dev,testing]>=2.0.0",
-    "pytest>=8.3.4",
-    "ruff>=0.8.5",
-    "semver>=3.0.2",
 ]
