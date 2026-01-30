@@ -108,10 +108,9 @@ The _dash-bootstrap-components_ maintainers would like to thank [Faculty][facult
 ## Copyright and license
 
 Copyright © 2018–2025 [Faculty Science Ltd.][faculty]
-Copyright © 2025 the _dash-bootstrap-components_ maintainers
+Copyright © 2025-2026 the _dash-bootstrap-components_ maintainers
 
 Released under the [Apache 2.0 license](https://github.com/dbc-team/dash-bootstrap-components/blob/main/LICENSE).
-
 
 [dash-homepage]: https://dash.plotly.com/
 [dash-docs-external]: https://dash.plotly.com/external-resources
