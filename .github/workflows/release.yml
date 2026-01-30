@@ -56,7 +56,13 @@ jobs:
       - name: Build dash-bootstrap-components
         run: just build
 
-      - run: npm publish --provenance --access public
+      - name: Publish to npm
+        run: |
+          if [ ${{ steps.get-release-type.outputs.type }} = 'prerelease' ]; then
+            npm publish --provenance --access public --tag next
+          else
+            npm publish --provenance --access public --tag latest
+          fi
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@v1.12.3
