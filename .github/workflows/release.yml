@@ -14,7 +14,7 @@ jobs:
     if: github.event.pull_request.merged && (startsWith(github.head_ref, 'release/') || startsWith(github.head_ref, 'prerelease/'))
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
         with:
           token: ${{ secrets.GH_ACCESS_TOKEN_TOM }}
 
@@ -32,18 +32,18 @@ jobs:
           fi
 
       - name: Use Node 22
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
 
       - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@v3
+        uses: astral-sh/setup-uv@v7
         with:
           version: 'latest'
 
       - name: Install just
-        uses: extractions/setup-just@v2
+        uses: extractions/setup-just@v3
 
       - name: Install JS dependencies
         run: npm ci
@@ -90,4 +90,4 @@ jobs:
           commit_message: Back to dev
           branch: main
           push_options: --force
-          file_pattern: package.json tests/test_version.py dash_bootstrap_components/_version.py uv.lock
+          file_pattern: package.json tests/test_version.py uv.lock
