@@ -90,4 +90,4 @@ jobs:
           commit_message: Back to dev
           branch: main
           push_options: --force
-          file_pattern: package.json tests/test_version.py uv.lock
+          file_pattern: package.json tests/test_version.py pyproject.toml uv.lock
