@@ -1,10 +1,13 @@
 """Bootstrap themed components for use in Plotly Dash"""
 
+from importlib.metadata import version
+
 from dash_bootstrap_components import _components, icons, themes
 from dash_bootstrap_components._components import *  # noqa
 from dash_bootstrap_components._components import Table
 from dash_bootstrap_components._table import _generate_table_from_df
-from dash_bootstrap_components._version import __version__
+
+__version__ = version("dash-bootstrap-components")
 
 __all__ = _components.__all__ + ["icons", "themes"]
 

@@ -1,17 +1,10 @@
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [project]
 name = "dash-bootstrap-components"
+version = "2.0.5.dev0"
 description = "Bootstrap themed components for use in Plotly Dash"
 readme = "README.md"
 license = { file = "LICENSE" }
-authors = [
-    { name = "Faculty Science Ltd" },
-    { name = "Pascal Bugnion" },
-    { name = "Tom Begley", email = "tomcbegley@gmail.com" },
-]
+authors = [{ name = "Tom Begley" }, { name = "Pascal Bugnion" }]
 maintainers = [{ name = "Tom Begley", email = "tomcbegley@gmail.com" }]
 requires-python = ">=3.10"
 dependencies = ["dash>=3.0.4"]
@@ -24,7 +17,6 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
 ]
-dynamic = ["version"]
 
 [dependency-groups]
 dev = [
@@ -42,34 +34,13 @@ Source = "https://github.com/dbc-team/dash-bootstrap-components/"
 [project.optional-dependencies]
 pandas = ["numpy>=2.0.2", "pandas>=2.2.3"]
 
-[tool.hatch.version]
-path = "dash_bootstrap_components/_version.py"
+[build-system]
+requires = ["uv_build>=0.9.22,<0.10.0"]
+build-backend = "uv_build"
 
-[tool.hatch.build.targets.sdist]
-include = [
-    "dash_bootstrap_components",
-    "README.md",
-    "LICENSE",
-    "NOTICE.txt",
-    "pyproject.toml",
-]
-artifacts = [
-    "dash_bootstrap_components/_components/dash_bootstrap_components.min.js",
-    "dash_bootstrap_components/_components/*.py",
-]
-
-[tool.hatch.build.targets.wheel]
-include = [
-    "dash_bootstrap_components",
-    "README.md",
-    "LICENSE",
-    "NOTICE.txt",
-    "pyproject.toml",
-]
-artifacts = [
-    "dash_bootstrap_components/_components/dash_bootstrap_components.min.js",
-    "dash_bootstrap_components/_components/*.py",
-]
+[tool.uv.build-backend]
+module-root = ""
+source-include = ["NOTICE.txt"]
 
 [tool.pytest.ini_options]
 minversion = "6.0"

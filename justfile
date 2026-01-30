@@ -51,14 +51,14 @@ build: clean && _build-py
 # Create and push a prerelease branch
 prerelease version: (_set-source-version version)
     git checkout -b prerelease/{{version}}
-    git add package.json dash_bootstrap_components/_version.py tests/test_version.py uv.lock
+    git add package.json tests/test_version.py uv.lock
     git commit -m "Prerelease {{version}}"
     git push origin prerelease/{{version}}
 
 # Create and push a release branch
 release version: (_set-source-version version)
     git checkout -b release/{{version}}
-    git add package.json dash_bootstrap_components/_version.py tests/test_version.py uv.lock
+    git add package.json tests/test_version.py uv.lock
     git commit -m "Release {{version}}"
     git push origin release/{{version}}
 
@@ -89,13 +89,11 @@ _copy-examples:
     cp examples/templates/multi-page-apps/simple_sidebar.py docs/examples/vendor/simple_sidebar.py
 
 _set-source-version version: (_set-py-version version) (_set-js-version version)
+    uv version {{version}}
     uv lock -P dash-bootstrap-components
 
 [script]
 _set-py-version version:
-    with open("{{justfile_directory()}}/dash_bootstrap_components/_version.py", "w") as f:
-        f.write('__version__ = "{{version}}"\n')
-
     with open("{{justfile_directory()}}/tests/test_version.py", "w") as f:
         f.write(
             "from dash_bootstrap_components import __version__\n\n\n"
