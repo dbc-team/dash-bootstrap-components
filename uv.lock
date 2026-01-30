@@ -357,7 +357,7 @@ testing = [
 
 [[package]]
 name = "dash-bootstrap-components"
-version = "2.0.5rc2"
+version = "2.0.5rc3"
 source = { editable = "." }
 dependencies = [
     { name = "dash" },
