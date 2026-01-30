@@ -1,6 +1,6 @@
 [project]
 name = "dash-bootstrap-components"
-version = "2.0.5rc3"
+version = "2.0.5rc4"
 description = "Bootstrap themed components for use in Plotly Dash"
 readme = "README.md"
 license = { file = "LICENSE" }
