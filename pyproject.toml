@@ -7,7 +7,9 @@ license = { file = "LICENSE" }
 authors = [{ name = "Tom Begley" }, { name = "Pascal Bugnion" }]
 maintainers = [{ name = "Tom Begley", email = "tomcbegley@gmail.com" }]
 requires-python = ">=3.10"
-dependencies = ["dash>=3.0.4"]
+dependencies = [
+    "dash>=3.0.4",
+]
 classifiers = [
     "Framework :: Dash",
     "License :: OSI Approved :: Apache Software License",
