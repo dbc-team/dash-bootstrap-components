@@ -88,8 +88,10 @@ _copy-examples:
     cp examples/advanced-component-usage/graphs_in_tabs.py docs/examples/vendor/graphs_in_tabs.py
     cp examples/templates/multi-page-apps/simple_sidebar.py docs/examples/vendor/simple_sidebar.py
 
-_set-source-version version: (_set-py-version version) (_set-js-version version)
+_set-source-version version: (_set-js-version version)
     uv version {{version}}
+    # run _set-py-version with the exact version after uv has processed it
+    just _set-py-version $(uv version --short)
     uv lock -P dash-bootstrap-components
 
 [script]
