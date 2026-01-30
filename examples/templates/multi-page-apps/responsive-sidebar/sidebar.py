@@ -62,7 +62,7 @@ sidebar = html.Div(
             [
                 html.Hr(),
                 html.P(
-                    "A responsive sidebar layout with collapsible navigation " "links.",
+                    "A responsive sidebar layout with collapsible navigation links.",
                     className="lead",
                 ),
             ],
