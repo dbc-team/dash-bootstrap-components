@@ -136,6 +136,46 @@ describe('Button', () => {
     expect(mockEventListener.mock.calls).toHaveLength(0);
   });
 
+  test('external_link does not leak to the DOM in non-link mode', () => {
+    const consoleError = jest
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
+
+    // no href: renders a <button>
+    const {
+      container: {firstChild: buttonNoHref}
+    } = render(<Button external_link>Clickable</Button>);
+    expect(buttonNoHref.tagName).toBe('BUTTON');
+    expect(buttonNoHref).not.toHaveAttribute('external_link');
+
+    // href but disabled: href is dropped, renders a <button>
+    const {
+      container: {firstChild: buttonDisabled}
+    } = render(
+      <Button href="/relative" external_link disabled>
+        Clickable
+      </Button>
+    );
+    expect(buttonDisabled.tagName).toBe('BUTTON');
+    expect(buttonDisabled).not.toHaveAttribute('external_link');
+
+    expect(consoleError).not.toHaveBeenCalled();
+    consoleError.mockRestore();
+  });
+
+  test('external_link is still applied in link mode', () => {
+    const {
+      container: {firstChild: link}
+    } = render(
+      <Button href="/relative" external_link target="_blank">
+        Clickable
+      </Button>
+    );
+    expect(link.tagName).toBe('A');
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).not.toHaveAttribute('external_link');
+  });
+
   test('onClick can be overridden', async () => {
     const user = userEvent.setup();
     const mockOnClick = jest.fn();

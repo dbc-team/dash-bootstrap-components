@@ -22,6 +22,7 @@ function Button({
   disabled,
   href,
   target,
+  external_link,
   type,
   download,
   name,
@@ -47,6 +48,9 @@ function Button({
     // react-bootstrap strips out target prop if tag isn't an anchor element,
     // so we pass it through under a different name
     otherProps['linkTarget'] = target;
+    // external_link is only meaningful for links. Forward it here so that it
+    // never reaches the DOM <button> in non-link mode.
+    otherProps['external_link'] = external_link;
   }
 
   return (
